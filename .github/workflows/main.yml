@@ -1,0 +1,26 @@
+on: [push]
+# You will need to create a separate job for each function you want to manage.
+jobs:
+  job_1:
+    name: Create / Update Function 1 to Segment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout and Preparing Function
+        uses: actions/checkout@v2
+      - shell: bash
+        # In the bash script below replace lib/function.js with the path to your function code.
+        run: |
+          echo "Function Code Is"
+          cp lib/function.js lib/function.txt
+          value=`cat lib/function.txt`
+          echo $value
+          echo "::set-output name=function_code::$value"
+        id: checkout
+      - name: Sending Function to Segment
+        uses: samgehret/manageSegmentFunction@v1.2 # Uses an action in the root directory will need to be updated once this is on the Actions Marketplace.
+        with:
+          token: 'd_VvMctRRAEocFweBcensXwBh3jyUhYkXl5Mh0s79XY.QgP7vh3AHZJqn_NeuE1mDlaDB3nIwJjj_TWza35HU8Y'
+          function-code: ${{ steps.checkout.outputs.function_code }} # don't update this
+          function-name: TestSourceFn
+          workspaceID: jeremylarkin
+          function-id: sfnc_RiO45jUb4a

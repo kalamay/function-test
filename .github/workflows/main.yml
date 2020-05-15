@@ -22,5 +22,5 @@ jobs:
           token: 'd_VvMctRRAEocFweBcensXwBh3jyUhYkXl5Mh0s79XY.QgP7vh3AHZJqn_NeuE1mDlaDB3nIwJjj_TWza35HU8Y'
           function-code: ${{ steps.checkout.outputs.function_code }} # don't update this
           function-name: TestSourceFn
-          workspaceID: jeremylarkin
+          workspaceID: PU73NmAhFF
           function-id: sfnc_RiO45jUb4a

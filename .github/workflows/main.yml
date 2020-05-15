@@ -11,7 +11,7 @@ jobs:
         # In the bash script below replace lib/function.js with the path to your function code.
         run: |
           echo "Function Code Is"
-          cp lib/function.js lib/function.txt
+          cp lib/destination-function.js lib/function.txt
           value=`cat lib/function.txt`
           echo $value
           echo "::set-output name=function_code::$value"
@@ -21,6 +21,6 @@ jobs:
         with:
           token: 'd_VvMctRRAEocFweBcensXwBh3jyUhYkXl5Mh0s79XY.QgP7vh3AHZJqn_NeuE1mDlaDB3nIwJjj_TWza35HU8Y'
           function-code: ${{ steps.checkout.outputs.function_code }} # don't update this
-          function-name: TestSourceFn
+          function-name: TestDestFn
           workspaceID: PU73NmAhFF
-          function-id: sfnc_RiO45jUb4a
+          function-id: dfn_5ebf05896584a110a0fe84f5

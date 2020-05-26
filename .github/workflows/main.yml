@@ -22,7 +22,7 @@ jobs:
       - name: Sending Function to Segment
         uses: samgehret/manageSegmentFunction@v1.2 # Uses an action in the root directory will need to be updated once this is on the Actions Marketplace.
         with:
-          token: 'd_VvMctRRAEocFweBcensXwBh3jyUhYkXl5Mh0s79XY.QgP7vh3AHZJqn_NeuE1mDlaDB3nIwJjj_TWza35HU8Y'
+          token: 'vOiloflwE6_Sm2urS1XxkCswlmkQuGCPjg7FwHxkxpk.vV0yqtT3Veg75LDq_wcXPYKBi02_ZLISEhxYzXR_-XY'
           function-code: ${{ steps.checkout.outputs.function_code }} # don't update this
           function-name: TestDestFn
           workspaceID: PU73NmAhFF
